@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import './Intersection.css'
 
 // const PLAYER_BLACK = 1;
 // const PLAYER_WHITE = 2;
@@ -20,8 +21,9 @@ export default function Intersection({playerTurn, onIntersectionClick, value}) {
 
 
   return(
-    <div className='h-14 w-14 bg-slate-600 border-2 content-center' onClick={onIntersectionClick}>
-      {stone}
+    <div className='vertical-line h-14 w-14 bg-yellow-600 content-center' onClick={onIntersectionClick}>
+      <div className='hor-line text-4xl'> {stone}</div>
+
     </div>
   );
 }
