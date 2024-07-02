@@ -13,6 +13,23 @@ function checkWinner(playerTurn, setPlayerTurn) {
     }
   }
 
+function stoneLiberties(coord, board) {
+  //stone = [0,0]
+  //board = [[1,2,0],
+  //         [0,0,0],
+  //         [0,0,0]]
+}
+
+function stoneNeighbors(coord) {
+  let neighbors = [[coord[0] - 1, coord[1]], //left neighbor
+                   [coord[0] + 1, coord[1]], //right neighbor
+                   [coord[0], coord[1] - 1], //bottom neighbor
+                   [coord[0], coord[1] + 1]]; //top neighbor
+  neighbors = neighbors.filter((neighbor) => ((neighbor[0] > -1 && neighbor[0] < n) && (neighbor[1] > -1 && neighbor[1] < n)))
+  console.log(neighbors);
+  return neighbors
+}
+
 const Go = ()  => {
   const [playerTurn, setPlayerTurn] = useState(PLAYER_BLACK);
   const [coord, setCoord] = useState([0,0]);
@@ -29,6 +46,7 @@ const Go = ()  => {
 
   useEffect(() => {
     checkWinner(playerTurn, setPlayerTurn);
+    stoneNeighbors([8,0])
   }, [intersections]);
 
   return (
