@@ -7,7 +7,7 @@ export default function Board({playerTurn, intersections, onIntersectionClick}) 
 
   return(
     <div
-      className={`w-max bg-white grid grid-cols-9 grid-rows-9`}
+      className={`w-max bg-white grid grid-cols-9 grid-rows-9 border-8 border-black`}
     >
       {intersections.map((rows, x) => (
           rows.map((intersection, y) => (
